@@ -15,7 +15,7 @@ function Home() {
     const mobileBackground = `./images/bg-main-mobile.png`;
 
     useEffect(() => {
-        console.log(cardData);
+        // console.log(cardData);
     }, [cardData]);
 
     // setData is a custom prop being passed to child component. In react we can pass custom props to a component just like we pass attributes to a html tag.

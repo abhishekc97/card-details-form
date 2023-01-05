@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import FormInput from "./FormInput";
 import "./Form.css"
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Form(props) {
     // to store entire data of the form, I declare the values object using the React useState 
     const [values, setValues] = useState({
@@ -70,7 +73,7 @@ function Form(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         // props
-        console.log(values);
+        // console.log(values);
         props.setData(values); // setData used for setting the values in the parent component
     }
 
@@ -78,6 +81,10 @@ function Form(props) {
     const onChange = (event) => {
         setValues({...values, [event.target.name]: event.target.value }); // will set the data of all fields into values object of this component level
     }
+
+    const notify = () => toast("Card Details updated!", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+    });
 
     return(
         <>
@@ -90,7 +97,8 @@ function Form(props) {
                     onChange={onChange}
                     />
                 ))}
-                <button className="form-button purple">Confirm</button>
+                <button className="form-button purple" onClick={notify}>Confirm</button>
+                <ToastContainer />
             </form>
         </>
     )

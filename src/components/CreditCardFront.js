@@ -6,9 +6,9 @@ function CreditCardFront(props) {
     const background = `./images/bg-card-front.png`;
     const cardLogo = `./images/card-logo.svg`
 
-    console.log("props", {...props});
+    // console.log("props", {...props});
     useEffect(() => {
-        console.log("At credit card component", props);
+        // console.log("At credit card component", props);
     });
 
     return(
