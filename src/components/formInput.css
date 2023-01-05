@@ -1,4 +1,4 @@
-.formInput{
+.form-input{
     display: flex;
     flex-direction: column;
     width: 280px;
@@ -11,13 +11,13 @@ input{
     border: 1px solid gray;
 }
 
-
 label{
     font-size: 12px;
     color: gray;
 }
 
 span{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 12px;
     padding: 3px;
     color: red;

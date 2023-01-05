@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import FormInput from "./FormInput";
-import "./formInput.css"
+import "./Form.css"
 
-function Form() {
-    // const [name, setName] = useState('');
-    // const [cardNumber, setCardNumber] = useState('');
-    // const [expiryMonth, setExpiryMonth] = useState('');
-    // const [expiryYear, setExpiryYear] = useState('');
-    // const [cvv, setCvv] = useState('');
-    // const [error, setError] = useState(false);
-
+function Form(props) {
+    // to store entire data of the form, I declare the values object using the React useState 
     const [values, setValues] = useState({
         name: "",
         cardNumber:"",
@@ -18,10 +12,11 @@ function Form() {
         cvv:""
     });
 
+    // This is used for form validation primarily. Each input object is also used by the Child component FormInput, where it's fields/properties are used
     const inputs = [
         {
             id: 1,
-            name:"cardholder name",
+            name:"cardholderName",
             type:"text",
             placeholder:"eg: Jane Appleseed",
             required:true,
@@ -30,7 +25,7 @@ function Form() {
         },
         {
             id: 2,
-            name:"card number",
+            name:"cardNumber",
             type:"text",
             placeholder:"eg: 1234 5678 9012 3456",
             required:true,
@@ -40,7 +35,7 @@ function Form() {
         },
         {
             id: 3,
-            name:"expiry month",
+            name:"expiryMonth",
             type:"text",
             placeholder:"MM",
             required:true,
@@ -50,7 +45,7 @@ function Form() {
         },
         {
             id: 4,
-            name:"expiry year",
+            name:"expiryYear",
             type:"text",
             placeholder:"YY",
             required:true,
@@ -71,17 +66,22 @@ function Form() {
         
     ];
 
+    // triggers on 'confirm details' button of the form
     const handleSubmit = (event) => {
         event.preventDefault();
+        // props
+        console.log(values);
+        props.setData(values); // setData used for setting the values in the parent component
     }
 
+    // onChange passed to the FormInput Child component, is triggered here as this function, to set values
     const onChange = (event) => {
-        setValues({...values, [event.target.name]: event.target.value });
+        setValues({...values, [event.target.name]: event.target.value }); // will set the data of all fields into values object of this component level
     }
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="forms">
                 {inputs.map((input) => (
                     <FormInput 
                     key={input.id}
@@ -89,8 +89,8 @@ function Form() {
                     value={values[input.name]}
                     onChange={onChange}
                     />
-                ) )}
-                <button>Confirm</button>
+                ))}
+                <button className="form-button purple">Confirm</button>
             </form>
         </>
     )

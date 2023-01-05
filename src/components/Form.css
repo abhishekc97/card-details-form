@@ -1,0 +1,42 @@
+.forms {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 500px;
+    padding: 2em;
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
+}
+
+.form-button {
+    background-color: #220930;
+    color: #fff;
+    width: 100%;
+    border: none;
+    height: 3.3em;
+    border-radius: 0.7em;
+    cursor: pointer;
+    font-weight: 700;
+    
+}
+.form__input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.8em;
+}
+
+.form__input span {
+    display: none;
+    position: absolute;
+    bottom: -1.5em;
+    color: var(--rederrors);
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    font-size: 0.74em;
+}
+
+.form__input > label {
+    white-space: nowrap;
+    margin-bottom: 1em;
+}

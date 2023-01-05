@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./FormInput.css";
 
 function FormInput(props) {
     const [focused, setFocused] = useState(false);
@@ -10,7 +11,7 @@ function FormInput(props) {
 
 
     return(
-        <div className="formInput">
+        <div className="form-input">
             <label> {label} </label>
             <input 
             {...inputProps}

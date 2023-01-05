@@ -1,0 +1,98 @@
+.card {
+    position: relative;
+
+    width: 28.9em;
+    height: 15.835em;
+
+    border-radius: 0.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: 1s ease-out 0s 1 entrance;
+    transition: right 500ms ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    cursor: pointer;
+}
+
+.card label {
+    cursor: grab;
+}
+
+.card__number,
+.card__cvv,
+.card__name,
+.card__date,
+.card img {
+    position: absolute;
+}
+
+/* .card:hover {
+    transform: translate(20px) rotate(3deg);
+    transition: transform 300ms ease-in;
+  } */
+
+.card img:first-of-type {
+    width: 6em;
+    top: 12%;
+    left: 7%;
+}
+
+.card__number {
+    color: #fff;
+    font-size: 190%;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    text-align: center;
+    bottom: 33%;
+    left: 7%;
+}
+
+.card__name,
+.card__date {
+	color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    bottom: 1.9em;
+}
+
+.card__name {
+    color: #fff;
+    left: 7%;
+    max-width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card__date {
+    right: 2.5em;
+}
+
+.card_month {
+	color: #fff;
+	font-size: 1em;
+}
+
+.card_year {
+	color: #fff;
+	font-size: 1em;
+}
+.card__cvv {
+    position: absolute;
+    font-size: 1.3em;
+    letter-spacing: 0.2ch;
+    bottom: 5.45em;
+    right: 3.5em;
+	color: black;
+}
+
+@keyframes entrance {
+    from {
+        transform: translateX(20px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
