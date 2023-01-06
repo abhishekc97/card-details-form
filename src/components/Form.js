@@ -76,18 +76,7 @@ function Form(props) {
         // console.log(values);
         props.setData(values); // setData used for setting the values in the parent component
         notify();
-        setTimeout(()=> clearInputs, 1);
     }
-
-    // clear the form after submission
-    
-    const clearInputs = () => {setValues({name: "",
-        cardNumber:"",
-        expiryMonth:"",
-        expiryYear:"",
-        cvv:""
-    })};
-
 
     // onChange passed to the FormInput Child component, is triggered here as this function, to set values
     const onChange = (event) => {
@@ -107,7 +96,6 @@ function Form(props) {
                     {...input}
                     value={values[input.name]}
                     onChange={onChange}
-                   
                     />
                 ))}
                 <button className="form-button purple">Confirm</button>
